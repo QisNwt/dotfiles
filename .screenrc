@@ -1,0 +1,5 @@
+startup_message off
+hardstatus on
+hardstatus alwayslastline "|%c %m/%d | %w"
+defescape ^Tt
+escape ^Tt
