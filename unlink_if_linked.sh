@@ -2,7 +2,7 @@
 
 for item in .*?; do
     case ${item} in
-        .. | .git )
+        .. | .git | .gitmodules | .gitignore )
             continue;;
         *)
             if [ 0 -eq `file "${HOME}/${item}" | grep "${PWD}/${item}" | echo $?` ]; then
