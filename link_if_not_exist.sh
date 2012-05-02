@@ -2,7 +2,7 @@
 
 for item in .?*; do
     case $item in
-        .. | .git)
+        .. | .git | .gitmodules)
             continue;;
         *)
             if [ ! -e "${HOME}/${item}" ]; then
