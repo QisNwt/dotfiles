@@ -13,4 +13,4 @@ set shiftwidth=4
 set expandtab
 set ignorecase
 set smartcase
-set smartindent
+" set smartindent
