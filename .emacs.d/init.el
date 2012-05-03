@@ -6,4 +6,16 @@
 (global-set-key "\C-m" 'newline-and-indent)
 (global-set-key "\C-j" 'newline)
 (add-hook 'after-save-hook 'executable-make-buffer-file-executable-if-script-p)
-(setq auto-save-file-prefix (expand-file-name "~/.autosave"))
+(setq auto-save-file-prefix (expand-file-name "~/.autosave/"))
+(load "~/elp/pub/.devfiles/elisp/init.el")
+
+(add-to-list 'load-path "~/.emacs.d/elisp")
+(require 'linum)
+(global-linum-mode)
+
+(setq inhibit-startup-message t)
+(setq scroll-conservatively 1)
+(global-set-key "\C-xj" 'goto-line)
+
+(menu-bar-mode -1)
+(tool-bar-mode -1)

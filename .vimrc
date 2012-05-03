@@ -13,4 +13,8 @@ set shiftwidth=4
 set expandtab
 set ignorecase
 set smartcase
-" set smartindent
+" set smartindenta
+
+" execute 'set listchars+=tab:\ ' . nr2char(187)
+" execute 'set listchars+=eol:' . nr2char(183)
+" set list
