@@ -1,0 +1,124 @@
+# maven
+export MAVEN_HOME=/usr/share/maven2
+export PATH=$PATH:$MAVEN_HOME/bin
+export PATH
+# maven options
+# MAVEN_OPTS="-Xms256m -Xms512m"
+export JAVA_HOME=/usr/lib/jvm/java-6-openjdk
+
+# sudo with current env. qis@2011-11-02 @2011-11-04
+#alias sudo="sudo env PATH=$PATH"
+
+# enables sudo commands. qis@2011-10-31
+export PATH=$PATH:/usr/local/sbin:/usr/sbin:/sbin
+
+# share & keep history. qis@2011-11-04
+function share_history {
+    history -a
+    history -c
+    history -r
+}
+
+PROMPT_COMMAND='share_history'
+shopt -u histappend
+export HISTSIZE=99999
+
+#export HISTCONTROL=ignoredups
+#export HISTCONTROL=ignorespace
+export HISTCONTROL=ignoreboth
+export HISTIGNORE="&:ls:bg:fg:l:ll:la:lu:c:..:...:....:sl:cal:lal"
+
+# prevent destroying existing file by redirect (use >|)
+shopt -o noclobber
+
+##############################
+# Aliases
+##############################
+
+# change directories
+alias ..='cd ..'
+alias ...='cd ../../'
+alias ....='cd ../../../'
+
+# lists
+alias l='ls'
+alias ll='ls -l'
+alias la='ls -A'
+alias lal='ls -al'
+alias lu='ls -Fula -h'
+alias sl='ls'
+
+# archives
+alias tarext='tar -zxvf'
+alias bz2ext='tar -jxvf'
+
+# others
+alias c='clear'
+
+# Date
+alias cal='cal -3'
+alias today='date +"%A, %B %-d, %Y"'
+alias now='date +"%T"'
+alias nowdate='date +"%d-%m-%Y'
+
+# Colorize greps
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+
+# grep shortcuts
+alias h='history | grep'
+alias f='find . | grep'
+alias p='ps aux | grep'
+
+# packages
+alias install='sudo apt-get install'
+alias uninstall='sudo apt-get remove'
+alias purge='sudo apt-get --purge remove'
+alias reinstall='sudo apt-get --reinstall install'
+alias upgrade='sudo apt-get update && sudo apt-get upgrade'
+
+# system
+alias shutdown='sudo shutdown -h now'
+alias reboot='sudo shutdown -r now'
+alias cpuinfo='lscpu'
+alias psmem='ps auxf | sort -nr -k 4'
+alias pscpu='ps auxf | sort -nr -k 3'
+
+##############################
+# Git
+##############################
+
+alias gis='git status'
+alias gic='git commit'
+alias gia='git add'
+alias gid='git diff'
+alias gib='git branch'
+alias gil='git log'
+alias gisb='git show-branch'
+alias gico='git checkout'
+alias gig='git grep'
+#alias gik='gitk --all'
+alias gir='git rebase'
+alias giri='git rebase --interactive'
+alias gicp='git cherry-pick'
+alias girm='git rm'
+
+##############################
+# Less
+##############################
+# Customize less output colorings
+# ref. http://www.tuxarena.com/2012/04/tutorial-colored-man-pages-how-it-works/
+export LESS_TERMCAP_mb=$(printf '\e[01;31m') # enter blinking mode - red
+export LESS_TERMCAP_md=$(printf '\e[01;35m') # enter double-bright mode - bold, magenta
+export LESS_TERMCAP_me=$(printf '\e[0m') # turn off all appearance modes (mb, md, so, us)
+export LESS_TERMCAP_se=$(printf '\e[0m') # leave standout mode    
+export LESS_TERMCAP_so=$(printf '\e[01;33m') # enter standout mode - yellow
+export LESS_TERMCAP_ue=$(printf '\e[0m') # leave underline mode
+export LESS_TERMCAP_us=$(printf '\e[04;36m') # enter underline mode - cyan
+
+##############################
+# Function
+##############################
+
+
